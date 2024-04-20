@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { GetPriceService } from './../get-price.service';
 import {
   AfterViewInit,
@@ -11,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-item-card',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './item-card.component.html',
   styleUrl: './item-card.component.scss',
 })

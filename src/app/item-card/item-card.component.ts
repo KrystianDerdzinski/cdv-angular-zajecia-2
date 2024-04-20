@@ -8,7 +8,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 @Component({
   selector: 'app-item-card',
   standalone: true,

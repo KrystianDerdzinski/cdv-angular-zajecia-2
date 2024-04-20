@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class GetPriceService {
+  name = 'Adam';
+
   constructor() {
     console.log('get price service works!');
   }

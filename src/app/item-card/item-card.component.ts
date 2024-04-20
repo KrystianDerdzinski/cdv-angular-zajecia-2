@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 export class ItemCardComponent implements OnInit {
   @Input() displayName = '';
   @Input() description = '';
+  // 1. Tworzymy event
   @Output() updateCart = new EventEmitter();
   amount = 0;
 

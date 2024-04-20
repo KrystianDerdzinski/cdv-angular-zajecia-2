@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 export class ItemCardComponent implements OnInit {
   @Input() displayName = '';
   @Input() description = '';
+  @Input() idx: number = 0;
   @Output() updateCart = new EventEmitter();
   amount = 0;
 
@@ -30,7 +31,8 @@ export class ItemCardComponent implements OnInit {
   }
 
   valueChanged() {
-    this.updateCart.emit(this.amount);
+    const index = this.idx;
+    this.updateCart.emit({ [index]: this.amount });
   }
 
   constructor(private getPriceService: GetPriceService) {}

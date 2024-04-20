@@ -1,4 +1,4 @@
-<app-header [amountOfItems]="totalItemsInCart"></app-header>
+<app-header [amountOfItems]="totalItemsInCartCount"></app-header>
 
 <div class="container">
   <app-item-card
@@ -7,6 +7,7 @@
     (mouseout)="removeShadow($event)"
     [displayName]="'jablko'"
     [description]="'ale fajne'"
+    [idx]="0"
   ></app-item-card>
 
   <app-item-card
@@ -14,11 +15,13 @@
     (mouseenter)="addShadow($event)"
     (mouseout)="removeShadow($event)"
     [displayName]="'gruszka'"
+    [idx]="1"
   ></app-item-card>
   <app-item-card
     (updateCart)="updateBasket($event)"
     (mouseenter)="addShadow($event)"
     (mouseout)="removeShadow($event)"
     [displayName]="'sliwka'"
+    [idx]="2"
   ></app-item-card>
 </div>

@@ -10,7 +10,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  totalItemsInCart = 0;
+  totalItemsInCart: { [id: string]: number } = {
+    0: 0,
+    1: 0,
+    2: 0,
+  };
+
+  totalItemsInCartCount = 0;
 
   addShadow($event: Event) {
     const target = $event.target as HTMLElement;
@@ -21,7 +27,16 @@ export class HomeComponent {
     target.classList.remove('has-shadow');
   }
 
-  updateBasket($event: number) {
-    this.totalItemsInCart = $event;
+  // { 1: 6 }
+
+  updateBasket($event: { [id: string]: number }) {
+    $event = { 1: 6 };
+    const key = Object.keys($event)[0];
+    const value = Object.values($event)[0];
+    this.totalItemsInCart[key] = value;
+
+    this.totalItemsInCartCount = Object.values(this.totalItemsInCart).reduce(
+      (acc, item) => acc + item
+    );
   }
 }

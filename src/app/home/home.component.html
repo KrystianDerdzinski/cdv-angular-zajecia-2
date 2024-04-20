@@ -2,10 +2,20 @@
 
 <div class="container">
   <app-item-card
+    (mouseenter)="addShadow($event)"
+    (mouseout)="removeShadow($event)"
     [displayName]="'jablko'"
     [description]="'ale fajne'"
   ></app-item-card>
 
-  <app-item-card [displayName]="'gruszka'"></app-item-card>
-  <app-item-card [displayName]="'sliwka'"></app-item-card>
+  <app-item-card
+    (mouseenter)="addShadow($event)"
+    (mouseout)="removeShadow($event)"
+    [displayName]="'gruszka'"
+  ></app-item-card>
+  <app-item-card
+    (mouseenter)="addShadow($event)"
+    (mouseout)="removeShadow($event)"
+    [displayName]="'sliwka'"
+  ></app-item-card>
 </div>

@@ -2,6 +2,7 @@
 
 <div class="container">
   <app-item-card
+    (updateCart)="updateBasket($event)"
     (mouseenter)="addShadow($event)"
     (mouseout)="removeShadow($event)"
     [displayName]="'jablko'"

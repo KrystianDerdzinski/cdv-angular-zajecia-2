@@ -1,6 +1,7 @@
 {{ displayName }} {{ description }}
 
 <input
+  (change)="valueChanged()"
   [(ngModel)]="amount"
   type="number"
   style="display: block; width: 100px"

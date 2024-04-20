@@ -3,9 +3,11 @@ import { GetPriceService } from './../get-price.service';
 import {
   AfterViewInit,
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -18,12 +20,17 @@ import { FormsModule } from '@angular/forms';
 export class ItemCardComponent implements OnInit {
   @Input() displayName = '';
   @Input() description = '';
+  @Output() updateCart = new EventEmitter();
   amount = 0;
 
   price: number = 0;
 
   ngOnInit(): void {
     this.price = this.getPriceService.getPrice();
+  }
+
+  valueChanged() {
+    this.updateCart.emit(this.amount);
   }
 
   constructor(private getPriceService: GetPriceService) {}

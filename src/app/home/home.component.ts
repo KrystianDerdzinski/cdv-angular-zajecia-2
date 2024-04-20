@@ -18,9 +18,8 @@ export class HomeComponent {
     const target = $event.target as HTMLElement;
     target.classList.remove('has-shadow');
   }
-}
 
-// uzywajac (mouseenter) i (mouseout) dodaj drop-shadow przy najechaniu kursorem na item-card
-// 1. przy mouseenter na app-item-card
-// dodajemy do niego klase has-shadow
-// przy mouseout usuwamy klase has-shadow
+  updateBasket($event: Event) {
+    console.log($event);
+  }
+}
